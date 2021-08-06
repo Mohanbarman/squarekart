@@ -1,0 +1,11 @@
+backend:
+  ✔ Signup / Login using email address and password @done(21-08-07 00:23)
+  ☐ View product catalog, including product title, photo and description
+  ☐ Order a Product
+  ☐ View order confirmation with Order ID.
+
+frontend:
+  ☐ Signup / Login using email address and password
+  ☐ View product catalog, including product title, photo and description
+  ☐ Order a Product
+  ☐ View order confirmation with Order ID.
