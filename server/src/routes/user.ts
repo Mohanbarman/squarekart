@@ -16,7 +16,7 @@ export const userRouter = Router();
  *  - [email] string required unique
  *  - [password] string required min(8) max(20)
  */
-userRouter.post("/", validateBody("user/signUp"), UserController.signUp);
+userRouter.post("/signUp", validateBody("user/signUp"), UserController.signUp);
 
 /**
  * User signin

@@ -62,6 +62,9 @@ export const signIn = async (req: TRequest, res: Response) => {
   res.json(buildResponse({ success: true, data: user }));
 };
 
+/**
+ * Get the current logged in user
+ */
 export const getMe = async (req: TRequest, res: Response) => {
   const user = req.user;
 
