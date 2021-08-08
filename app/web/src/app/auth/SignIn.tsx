@@ -3,7 +3,6 @@ import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Navbar } from "../../shared";
 import {
   FormInputsContainer,
   FormRootContainer,
