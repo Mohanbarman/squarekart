@@ -5,6 +5,9 @@ export const createDbConnection = async (): Promise<void> => {
   try {
     const prodConfig = {
       url: env.HEROKU_DB_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     };
 
     const devConfig = {
@@ -24,7 +27,9 @@ export const createDbConnection = async (): Promise<void> => {
       ...connectionConfig,
     });
 
-    console.log(`Connected to database at ${env.DB_HOST}:${env.DB_PORT} 📁`);
+    console.log(
+      `Connected to database ${JSON.stringify(connectionConfig, null, 2)} 📁`
+    );
   } catch (e) {
     throw new Error(e);
   }
