@@ -39,10 +39,10 @@ export const SignIn: FC = () => {
 
     const { error } = await api.signIn(email, password);
 
-    refetchUser?.();
     if (!error) {
       history.goBack();
       showNotification?.("Logged in successfully", "success");
+      refetchUser?.();
       return;
     }
 

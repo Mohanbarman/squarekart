@@ -18,8 +18,8 @@ services:
 
   api:
     build:
-      context: ./server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./app/api/Dockerfile
     container_name: square-kart-api
     ports:
       - 4000:4000
@@ -36,8 +36,8 @@ services:
 
   web:
     build:
-      context: ./web
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./app/web/Dockerfile
     container_name: square-kart-web
     ports:
       - 3000:3000
