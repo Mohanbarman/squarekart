@@ -11,7 +11,7 @@ export const validateParam =
   (name: string, paramName: string) =>
   async (req: Request, res: Response, next: NextFunction) => {
     const [type, field] = name.split("/");
-    const param = req.params[field];
+    const param = req.params[paramName];
 
     const fields = await import(`./${type}/fields.ts`);
     const fieldSchema = fields[field];

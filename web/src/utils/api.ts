@@ -38,3 +38,68 @@ export const getMe = async () => {
     return { data: null, error: e?.response?.data?.error || e?.message };
   }
 };
+
+export const logout = async () => {
+  try {
+    const res = await Api.get("/user/logout");
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.response?.data?.error || e?.message };
+  }
+};
+
+export const getAllProducts = async () => {
+  try {
+    const res = await Api.get("/products");
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.message };
+  }
+};
+
+export const getProductById = async (id: number) => {
+  try {
+    const res = await Api.get(`/products/${id}`);
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.response?.data?.error || e?.message };
+  }
+};
+
+interface ICreateOrderBody {
+  currency: string;
+  qty: number;
+  fullName: string;
+  mobile: number;
+  shippingAddress: string;
+  city: string;
+  state: string;
+  productId: string;
+}
+
+export const createOrder = async (body: ICreateOrderBody) => {
+  try {
+    const res = await Api.post("/orders", body);
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.response?.data?.error || e?.message };
+  }
+};
+
+export const getMyOrders = async () => {
+  try {
+    const res = await Api.get("/orders");
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.response?.data?.error || e?.message };
+  }
+};
+
+export const getOrder = async (id: number) => {
+  try {
+    const res = await Api.get(`/orders/${id}`);
+    return { data: res.data.data, error: null };
+  } catch (e) {
+    return { data: null, error: e?.response?.data?.error || e?.message };
+  }
+};

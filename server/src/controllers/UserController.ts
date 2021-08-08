@@ -77,3 +77,8 @@ export const getMe = async (req: TRequest, res: Response) => {
 
   res.json(buildResponse({ success: true, data: user }));
 };
+
+export const logout = async (req: TRequest, res: Response) => {
+  req.session.destroy(() => {});
+  res.json(buildResponse({ success: true }));
+};

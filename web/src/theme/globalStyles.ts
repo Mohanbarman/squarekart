@@ -8,6 +8,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #F0F4F8;
+    background-color: white;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a, a:visited, a:hover, a:active {
+    color: inherit;
   }
 `;

@@ -51,82 +51,79 @@ export const SignUp: FC = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <RootContainer>
-        <FormRootContainer>
-          <Typography
-            style={{ marginBottom: "50px", textAlign: "center" }}
-            variant="h5"
-          >
-            Sign In
-          </Typography>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormInputsContainer>
-              <TextField
-                variant="outlined"
-                color="primary"
-                label="First Name"
-                placeholder="John"
-                helperText={errors.firstName?.message || ""}
-                error={!!errors.firstName}
-                inputProps={register("firstName")}
-              />
-              <TextField
-                variant="outlined"
-                color="primary"
-                label="Last Name"
-                placeholder="Doe"
-                helperText={errors.lastName?.message || ""}
-                error={!!errors.lastName}
-                inputProps={register("lastName")}
-              />
-              <TextField
-                variant="outlined"
-                color="primary"
-                label="Email"
-                placeholder="username@domain.com"
-                helperText={errors.email?.message || ""}
-                error={!!errors.email}
-                inputProps={register("email")}
-              />
-              <TextField
-                variant="outlined"
-                color="primary"
-                label="Password"
-                type="password"
-                placeholder="************"
-                helperText={errors.password?.message}
-                error={!!errors.password}
-                inputProps={register("password")}
-              />
-              <Button
-                disabled={loading}
-                type="submit"
-                color="primary"
-                variant="contained"
-              >
-                {loading ? "Please wait..." : "Sign Up"}
-              </Button>
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                marginLeft="10px"
-              >
-                <Typography variant="caption" color="textSecondary">
-                  Already have an account ?
+    <RootContainer>
+      <FormRootContainer>
+        <Typography
+          style={{ marginBottom: "50px", textAlign: "center" }}
+          variant="h5"
+        >
+          Sign In
+        </Typography>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <FormInputsContainer>
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="First Name"
+              placeholder="John"
+              helperText={errors.firstName?.message || ""}
+              error={!!errors.firstName}
+              inputProps={register("firstName")}
+            />
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="Last Name"
+              placeholder="Doe"
+              helperText={errors.lastName?.message || ""}
+              error={!!errors.lastName}
+              inputProps={register("lastName")}
+            />
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="Email"
+              placeholder="username@domain.com"
+              helperText={errors.email?.message || ""}
+              error={!!errors.email}
+              inputProps={register("email")}
+            />
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="Password"
+              type="password"
+              placeholder="************"
+              helperText={errors.password?.message}
+              error={!!errors.password}
+              inputProps={register("password")}
+            />
+            <Button
+              disabled={loading}
+              type="submit"
+              color="primary"
+              variant="contained"
+            >
+              {loading ? "Please wait..." : "Sign Up"}
+            </Button>
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              marginLeft="10px"
+            >
+              <Typography variant="caption" color="textSecondary">
+                Already have an account ?
+              </Typography>
+              <Button onClick={() => history.push("/signIn")} size="small">
+                <Typography variant="caption" color="primary">
+                  Sign In
                 </Typography>
-                <Button onClick={() => history.push("/signIn")} size="small">
-                  <Typography variant="caption" color="primary">
-                    Sign In
-                  </Typography>
-                </Button>
-              </Box>
-            </FormInputsContainer>
-          </form>
-        </FormRootContainer>
-      </RootContainer>
-    </>
+              </Button>
+            </Box>
+          </FormInputsContainer>
+        </form>
+      </FormRootContainer>
+    </RootContainer>
   );
 };

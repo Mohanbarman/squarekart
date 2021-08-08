@@ -29,3 +29,5 @@ userRouter.post("/signUp", validateBody("user/signUp"), UserController.signUp);
 userRouter.post("/signIn", validateBody("user/signIn"), UserController.signIn);
 
 userRouter.get("/me", getUserMiddleware, UserController.getMe);
+
+userRouter.get("/logout", UserController.logout);

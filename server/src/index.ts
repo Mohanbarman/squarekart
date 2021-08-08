@@ -2,7 +2,8 @@ import express from "express";
 
 import { env, createDbConnection, session } from "./config";
 import { cors } from "./middlewares";
-import { userRouter } from "./routes";
+import { productRouter, userRouter } from "./routes";
+import { orderRouter } from "./routes/order";
 
 const app = express();
 
@@ -15,5 +16,7 @@ app.use(session);
 
 // routes
 app.use("/user", userRouter);
+app.use("/products", productRouter);
+app.use("/orders", orderRouter);
 
 app.listen(env.PORT, () => console.log(`Alive on port ${env.PORT} 🚀`));

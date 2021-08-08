@@ -10,7 +10,6 @@ export const RootContainer = styled.div`
 export const FormRootContainer = styled.div`
   padding: 30px;
   border-radius: 10px;
-  background-color: white;
   width: 100%;
   max-width: 500px;
 `;

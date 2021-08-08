@@ -20,5 +20,13 @@ Cookie: connect.sid=s%3AhxlH7Kx_Tewj28SBmLyFB6T-cMnYwFxz.jk3R7OHNRcgrqxhpSALxuiz
 }
 
 ### getting the current logged in user
-GET http://localhost:4000/user/me
+GET http://localhost:4000/orders
 Cookie: connect.sid=s%3AhxlH7Kx_Tewj28SBmLyFB6T-cMnYwFxz.jk3R7OHNRcgrqxhC6eyK4b1ToTEM5l%2FQ; Path=/; Expires=Sun, 05 Sep 2021 18:33:18 GMT; HttpOnly
+
+### Getting all products
+GET http://localhost:4000/products
+
+### Getting single product
+GET http://localhost:4000/products/1
+
+###

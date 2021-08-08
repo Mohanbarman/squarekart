@@ -37,4 +37,18 @@ export const userErrors = {
       })
     );
   },
+
+  unauthenticated: (res: Response) => {
+    res
+      .status(401)
+      .json(
+        buildResponse({
+          success: false,
+          error: {
+            code: "UNAUTHENTICATED",
+            message: "You are not authenticated to perform this action",
+          },
+        })
+      );
+  },
 };

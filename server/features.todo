@@ -1,11 +1,11 @@
 backend:
   ✔ Signup / Login using email address and password @done(21-08-07 00:23)
-  ☐ View product catalog, including product title, photo and description
-  ☐ Order a Product
-  ☐ View order confirmation with Order ID.
+  ✔ View product catalog, including product title, photo and description @done(21-08-08 22:26)
+  ✔ Order a Product @done(21-08-08 22:26)
+  ✔ View order confirmation with Order ID. @done(21-08-08 22:27)
 
 frontend:
-  ☐ Signup / Login using email address and password
-  ☐ View product catalog, including product title, photo and description
-  ☐ Order a Product
-  ☐ View order confirmation with Order ID.
+  ✔ Signup / Login using email address and password @done(21-08-08 11:51)
+  ✔ View product catalog, including product title, photo and description @done(21-08-08 22:27)
+  ✔ Order a Product @done(21-08-08 22:27)
+  ✔ View order confirmation with Order ID. @done(21-08-08 22:27)
