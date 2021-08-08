@@ -1,5 +1,14 @@
 {
-  "dependencies": {
-    "typeorm": "^0.2.36"
-  }
+  "name": "ecommerce-sqareboat",
+  "private": "true",
+  "version": "1.0.0",
+  "workspaces": [
+    "app/*"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start:api": "cd ./app/api && ts-node ./src",
+    "start:web": "cd ./app/web && npx react-scripts start"
+  },
+  "license": "ISC"
 }

@@ -1,14 +1,14 @@
 {
-  "name": "@project/squareboat-ecom",
+  "name": "@app/api",
   "version": "1.0.0",
   "scripts": {
     "dev": "tsnd --respawn src/index.ts",
-    "start": "ts-node src/index.ts"
+    "start:api": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "Mohan Barman",
   "engines": {
-    "node": "16.6.1"
+    "node": "16.x"
   },
   "license": "ISC",
   "dependencies": {
