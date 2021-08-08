@@ -4,14 +4,25 @@ import * as env from "./env";
 
 const sessionStore = PgSession(expressSession);
 
-const pgStore = new sessionStore({
-  conObject: {
-    host: env.DB_HOST,
-    database: env.DB_NAME,
-    port: env.DB_PORT,
-    password: env.DB_PASS,
-    user: env.DB_USERNAME,
+const prodConfig = {
+  connectionString: env.HEROKU_DB_URL,
+  ssl: {
+    rejectUnauthorized: false,
   },
+};
+
+const devConfig = {
+  host: env.DB_HOST,
+  user: env.DB_USERNAME,
+  password: env.DB_PASS,
+  database: env.DB_NAME,
+  port: env.DB_PORT,
+};
+
+const connectionConfig = env.isProduction ? prodConfig : devConfig;
+
+const pgStore = new sessionStore({
+  conObject: connectionConfig,
   tableName: "session",
 });
 
