@@ -40,5 +40,5 @@ export const session = expressSession({
   secret: env.EXPRESS_SESSION_SECRET,
   saveUninitialized: true,
   store: pgStore,
-  cookie: env.isProduction ? devCookieConfig : prodCookiConfig,
+  cookie: env.isProduction ? prodCookiConfig : devCookieConfig,
 });
