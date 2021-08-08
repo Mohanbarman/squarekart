@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 
-const isProduction = process.env.ENV === "prod";
+export const isProduction = process.env.ENV === "prod";
 config({ path: isProduction ? ".env.prod" : ".env" });
 
 // env variables
@@ -11,6 +11,7 @@ export const DB_PORT = parseInt(process.env["DB_PORT"] || "");
 export const DB_USERNAME = process.env["DB_USERNAME"] || "";
 export const DB_PASS = process.env["DB_PASS"] || "";
 export const DB_NAME = process.env["DB_NAME"] || "";
+export const HEROKU_DB_URL = process.env["DATABASE_URL"] || "";
 export const EXPRESS_SESSION_SECRET =
   process.env["EXPRESS_SESSION_SECRET"] || "";
 
