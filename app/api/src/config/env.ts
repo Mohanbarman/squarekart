@@ -22,9 +22,13 @@ const throwEnvErr = (name: string) => {
 
 if (!PORT) throwEnvErr("PORT");
 if (!CORS_ORIGIN) throwEnvErr("CORS_ORIGIN");
-if (!DB_HOST) throwEnvErr("DB_HOST");
-if (!DB_PORT) throwEnvErr("DB_PORT");
-if (!DB_USERNAME) throwEnvErr("DB_USERNAME");
-if (!DB_PASS) throwEnvErr("DB_PASS");
-if (!DB_NAME) throwEnvErr("DB_NAME");
+if (!isProduction) {
+  if (!DB_HOST) throwEnvErr("DB_HOST");
+  if (!DB_PORT) throwEnvErr("DB_PORT");
+  if (!DB_USERNAME) throwEnvErr("DB_USERNAME");
+  if (!DB_PASS) throwEnvErr("DB_PASS");
+  if (!DB_NAME) throwEnvErr("DB_NAME");
+} else {
+  if (!HEROKU_DB_URL) throwEnvErr("HEROKU_DB_URL");
+}
 if (!EXPRESS_SESSION_SECRET) throwEnvErr("EXPRESS_SESSION_SECRET");
