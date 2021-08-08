@@ -4,10 +4,8 @@ RUN mkdir -p /home/app
 
 WORKDIR /home/app
 
-COPY package*json .
+COPY . .
 
 RUN yarn install
 
-COPY . .
-
-CMD ['yarn', 'start']
+CMD ["yarn", "start:api"]
