@@ -26,19 +26,11 @@ const pgStore = new sessionStore({
   tableName: "session",
 });
 
-const devCookieConfig = {
-  maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-};
-
-const prodCookiConfig = {
-  maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-  sameSite: "none",
-  secure: true,
-};
-
 export const session = expressSession({
   secret: env.EXPRESS_SESSION_SECRET,
   saveUninitialized: true,
   store: pgStore,
-  cookie: env.isProduction ? prodCookiConfig : devCookieConfig,
+  cookie: {
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+  },
 });

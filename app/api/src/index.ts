@@ -2,7 +2,6 @@ import express from "express";
 import path from "path";
 
 import { env, createDbConnection, session } from "./config";
-import { cors } from "./middlewares";
 import { productRouter, userRouter } from "./routes";
 import { orderRouter } from "./routes/order";
 
@@ -15,7 +14,6 @@ app.use(express.static(path.resolve(__dirname, "../../web/build")));
 
 // middlewares
 app.use(express.json()); // json parser
-app.use(cors); // adding cors headers
 app.use(session);
 
 // routes
