@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start:api": "cd ./app/api && ts-node ./src",
-    "start:web": "cd ./app/web && npx react-scripts start"
+    "start:web": "cd ./app/web && npx react-scripts start",
+    "build:web": "lerna run build:web"
   },
   "license": "ISC"
 }
